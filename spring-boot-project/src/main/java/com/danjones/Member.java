@@ -1,8 +1,21 @@
 package com.danjones;
 
+import jakarta.persistence.*;
+
 import java.util.Objects;
 
+@Entity
 public class Member {
+
+    @Id
+    @SequenceGenerator(
+            name = "member_id_sequence",
+            sequenceName = "member_id_sequence"
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "member_id_sequence"
+    )
     private Integer id;
     private String name;
     private String tier;

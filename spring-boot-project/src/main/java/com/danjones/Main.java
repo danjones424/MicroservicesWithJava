@@ -15,22 +15,22 @@ public class Main {
         SpringApplication.run(Main.class, args);
     }
 
-    @GetMapping("/greet")
-    public GreetResponse greet() {
-        return new GreetResponse(
-                "Hello",
-                List.of("MonstersInc", "Uncharted", "Chronicle"),
-                new Person("Daniel", 27, 65_000));
-    }
-
-    record Person(String name, int age, double salary) {
-
-    }
-
-    record GreetResponse(
-            String greet,
-            List<String> topMovies,
-            Person person){}
+//    @GetMapping("/greet")
+//    public GreetResponse greet() {
+//        return new GreetResponse(
+//                "Hello",
+//                List.of("MonstersInc", "Uncharted", "Chronicle"),
+//                new Person("Daniel", 27, 65_000));
+//    }
+//
+//    record Person(String name, int age, double salary) {
+//
+//    }
+//
+//    record GreetResponse(
+//            String greet,
+//            List<String> topMovies,
+//            Person person){}
 
 //    class GreetResponse{
 //        private final String greet;
