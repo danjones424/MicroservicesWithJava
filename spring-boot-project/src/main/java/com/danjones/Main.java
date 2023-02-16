@@ -41,10 +41,18 @@ public class Main {
         memberRepository.save(member);
     }
 
-    @DeleteMapping("{customerId}")
-    public void deleteMember(@PathVariable("customerId") Integer id){
+    @DeleteMapping("{memberId}")
+    public void deleteMember(@PathVariable("memberId") Integer id){
         memberRepository.deleteById(id);
     }
+
+    @PutMapping("{memberId}")
+    public void updateMember(
+            @PathVariable("memberId") Integer id,
+            @RequestBody UpdateMemberRequest updateRequest){
+        memberRepository.updateMember(id, updateRequest);
+    }
+
 
 
 
