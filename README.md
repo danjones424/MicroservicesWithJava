@@ -23,7 +23,7 @@ git clone https://github.com/your-username/simple-crud-api.git
 2.) Navigate to the project directory:
 
 ```bash
-cd simple-crud-api
+cd  MicroservicesWithJava
 ```
 
 3.) Build the Docker image
