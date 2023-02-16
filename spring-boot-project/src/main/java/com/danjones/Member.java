@@ -10,7 +10,8 @@ public class Member {
     @Id
     @SequenceGenerator(
             name = "member_id_sequence",
-            sequenceName = "member_id_sequence"
+            sequenceName = "member_id_sequence",
+            allocationSize = 1
     )
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
@@ -19,16 +20,16 @@ public class Member {
     private Integer id;
     private String name;
     private String tier;
-    private Integer subscribedYears;
+    private String email;
 
     public Member(Integer id,
                   String name,
                   String tier,
-                  Integer subscribedYears) {
+                  String email) {
         this.id = id;
         this.name = name;
         this.tier = tier;
-        this.subscribedYears = subscribedYears;
+        this.email = email;
     }
 
     public Member() {
@@ -58,12 +59,12 @@ public class Member {
         this.tier = tier;
     }
 
-    public Integer getSubscribedYears() {
-        return subscribedYears;
+    public String getEmail() {
+        return email;
     }
 
-    public void setSubscribedYears(Integer subscribedYears) {
-        this.subscribedYears = subscribedYears;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -71,12 +72,12 @@ public class Member {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Member member = (Member) o;
-        return Objects.equals(id, member.id) && Objects.equals(name, member.name) && Objects.equals(tier, member.tier) && Objects.equals(subscribedYears, member.subscribedYears);
+        return Objects.equals(id, member.id) && Objects.equals(name, member.name) && Objects.equals(tier, member.tier) && Objects.equals(email, member.email);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, tier, subscribedYears);
+        return Objects.hash(id, name, tier, email);
     }
 
     @Override
@@ -85,7 +86,7 @@ public class Member {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", tier='" + tier + '\'' +
-                ", subscribedYears=" + subscribedYears +
+                ", email=" + email +
                 '}';
     }
 }
