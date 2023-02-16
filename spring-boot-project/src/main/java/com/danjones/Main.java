@@ -41,5 +41,11 @@ public class Main {
         memberRepository.save(member);
     }
 
+    @DeleteMapping("{customerId}")
+    public void deleteMember(@PathVariable("customerId") Integer id){
+        memberRepository.deleteById(id);
+    }
+
+
 
 }
