@@ -56,7 +56,7 @@ Deletes the member with the specified ID from the database.
 
 Technologies Used
 
-    Java 8
+    Java 
     Spring Boot
     Postgres
     Docker
